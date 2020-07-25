@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-char square[10] = {'o', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char square[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
 int checkwin();
 void board();
@@ -16,7 +16,7 @@ int main()
         board();
         player = (player % 2) ? 1 : 2;
 
-        cout << "Player " << player << ", enter a number:  ";
+        cout << "Jatekos " << player << ", adj meg egy szamot:  ";
         cin >> choice;
 
         mark = (player == 1) ? 'X' : 'O';
@@ -50,7 +50,7 @@ int main()
             square[9] = mark;
         else
         {
-            cout << "Invalid move ";
+            cout << "Nem lehet ";
 
             player--;
             cin.ignore();
@@ -63,9 +63,9 @@ int main()
     board();
     if (i == 1)
 
-        cout << "==>\aPlayer " << --player << " win ";
+        cout << "==>\aJatekos " << --player << " gyozott ";
     else
-        cout << "==>\aGame draw";
+        cout << "==>\aDontetlen";
 
     cin.ignore();
     cin.get();
@@ -108,10 +108,10 @@ int checkwin()
 void board()
 {
     system("cls");
-    cout << "\n\n\tTic Tac Toe\n\n";
+    cout << "\n\n\tX - 0\n\n";
 
-    cout << "Player 1 (X)  -  Player 2 (O)" << endl
-         << endl;
+    cout << "Elso jatekos (X)  -  Masodik jatekos (O)" << endl
+        << endl;
     cout << endl;
 
     cout << "     |     |     " << endl;
@@ -128,5 +128,5 @@ void board()
     cout << "  " << square[7] << "  |  " << square[8] << "  |  " << square[9] << endl;
 
     cout << "     |     |     " << endl
-         << endl;
+        << endl;
 }
